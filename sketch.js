@@ -1,27 +1,55 @@
 var wave;
-var playing=false;
 var button;
-function setup() {
-  createCanvas(720, 256);
-  wave=new p5.Oscillator();
-wave.setType('sine');
-//wave.start();
-wave.freq(440);
-wave.amp(0.1);
+var slider;
+var playing=false;
 
-button=createButton('play/pause');
-button.mousePressed(toggle);
-}
-function draw() {
-}
-function toggle(){
+function setup(){
+  createCanvas(720, 256);
+  wave = new p5.Oscillator();
+  wave.setType('sine');
   
-  if(!playing){
-    wave.start();
-    wave.amp(0.5,1);
-    playing=true;
-  }else{
-    wave.amp(0,1);
-    playing=false;
-  }
-  }
+  wave.freq(261.6256);
+  wave.amp(0);
+  
+  button=createButton('도');
+  button=createButton('레');
+  button=createButton('미');
+  button=createButton('파');
+  button=createButton('솔');
+  button=createButton('라');
+  button=createButton('시');
+  button=createButton('도');
+  button.mousePressed(toggle);
+}
+
+function draw(){
+ wave.freq(slider.value());
+if(playing){
+  background(255, 0, 255);
+}else{
+  background(51);
+}
+}
+
+function toggle(){
+ if(!playing){
+wave.start();
+  wave.amp(0.5, 1);
+  playing=true;
+}else {
+  wave.amp(0,1);
+  playing=false;
+ }
+}
+
+function draw(){
+  
+}
+/*function touchStarted(){
+  text(touches.length, 200, 200);//몇개의 손가락이 터치 되었는가?
+  text(touches[0].x, 200, 220);//첫번째(1개) 손가락 X좌표
+  text(touches[0].y, 200, 240);//첫번째(1개) 손가락 Y좌표
+  text(touches[1].x, 200, 260);//두번째(2개) 손가락 X좌표
+  text(touches[1].y, 200, 280);//두번째(1개) 손가락 Y좌표
+}
+*/
