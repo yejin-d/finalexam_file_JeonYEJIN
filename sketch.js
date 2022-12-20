@@ -12,11 +12,16 @@ function setup(){
   wave.amp(0);
   
   button=createButton('도');
+  button=createButton('C#');
   button=createButton('레');
+  button=createButton('D#');
   button=createButton('미');
   button=createButton('파');
+  button=createButton('F#');
   button=createButton('솔');
+  button=createButton('G#');
   button=createButton('라');
+  button=createButton('A#');
   button=createButton('시');
   button=createButton('도');
   button.mousePressed(toggle);
