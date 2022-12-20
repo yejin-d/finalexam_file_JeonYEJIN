@@ -10,21 +10,39 @@ function setup(){
   
   wave.freq(261.6256);
   wave.amp(0);
-  
   button=createButton('도');
+   button.mousePressed(toggle);
   button=createButton('C#');
+   button.mousePressed(toggle);
   button=createButton('레');
+   button.mousePressed(toggle);
   button=createButton('D#');
+   button.mousePressed(toggle);
   button=createButton('미');
+   button.mousePressed(toggle);
   button=createButton('파');
+   button.mousePressed(toggle);
   button=createButton('F#');
+   button.mousePressed(toggle);
   button=createButton('솔');
+   button.mousePressed(toggle);
   button=createButton('G#');
+   button.mousePressed(toggle);
   button=createButton('라');
+   button.mousePressed(toggle);
   button=createButton('A#');
+   button.mousePressed(toggle);
   button=createButton('시');
+   button.mousePressed(toggle);
   button=createButton('도');
+   button.mousePressed(toggle);
+  
+  button=createButton('+');
+   button.mousePressed(toggle);
+  button=createButton('-');
   button.mousePressed(toggle);
+  
+ 
 }
 
 function draw(){
