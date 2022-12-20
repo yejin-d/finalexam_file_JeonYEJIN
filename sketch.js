@@ -12,6 +12,7 @@ function setup(){
   wave.amp(0);
   button=createButton('도');
    button.mousePressed(toggle);
+
   button=createButton('C#');
    button.mousePressed(toggle);
   button=createButton('레');
@@ -76,3 +77,4 @@ function draw(){
   text(touches[1].y, 200, 280);//두번째(1개) 손가락 Y좌표
 }
 */
+
