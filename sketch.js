@@ -12,6 +12,8 @@ function setup(){
   
   wave.freq(261.6256);
   wave.amp(0);
+  volume = createSlider(0, 1, vol, 0.01);
+  volume.size(300);
   button=createButton('도');
    button.mousePressed(toggle);
 }
@@ -62,6 +64,9 @@ if(playing){
 }else{
   background(51);
 }
+function draw(){
+  song.setVolume(volume.value());
+}
 }
 
 function toggle(){
@@ -73,13 +78,6 @@ wave.start();
   wave.amp(0,1);
   playing=false;
  }
-}
-
-function draw(){
-  if (button.mousePressed('+'))
-  volume_up();
-if (button.mousePressed('-'))
-  volume_down();
 }
 /*function touchStarted(){
   text(touches.length, 200, 200);//몇개의 손가락이 터치 되었는가?
