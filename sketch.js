@@ -9,19 +9,11 @@ function setup(){
   createCanvas(720, 256);
   wave = new p5.Oscillator();
   wave.setType('sine');
-  
   wave.freq(440);
   wave.amp(0);
-  volume = createSlider(0, 1, vol, 0.01);
-  volume.size(300);
+
   button=createButton('도');
-   button.mousePressed(toggle);
-}
-  function setup(){
-  createCanvas(720, 256);
-  wave = new p5.Oscillator();
-  wave.setType('sine');
-  
+   button.mousePressed(toggle); 
   button=createButton('C#');
    button.mousePressed(toggle);
   button=createButton('레');
