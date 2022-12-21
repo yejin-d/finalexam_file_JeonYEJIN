@@ -2,6 +2,8 @@ var wave;
 var button;
 var slider;
 var playing=false;
+var volume_up;
+var volume_down;
 
 function setup(){
   createCanvas(720, 256);
@@ -12,7 +14,14 @@ function setup(){
   wave.amp(0);
   button=createButton('도');
    button.mousePressed(toggle);
-
+}
+  function setup(){
+  createCanvas(720, 256);
+  wave = new p5.Oscillator();
+  wave.setType('sine');
+  
+  wave.freq(277.1826);
+  wave.amp(0);
   button=createButton('C#');
    button.mousePressed(toggle);
   button=createButton('레');
@@ -45,7 +54,7 @@ function setup(){
   
  
 }
-
+  
 function draw(){
  wave.freq(slider.value());
 if(playing){
@@ -67,7 +76,10 @@ wave.start();
 }
 
 function draw(){
-  
+  if (button.mousePressed('+'))
+  volume_up();
+if (button.mousePressed('-'))
+  volume_down();
 }
 /*function touchStarted(){
   text(touches.length, 200, 200);//몇개의 손가락이 터치 되었는가?
@@ -77,4 +89,3 @@ function draw(){
   text(touches[1].y, 200, 280);//두번째(1개) 손가락 Y좌표
 }
 */
-
