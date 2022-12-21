@@ -10,7 +10,7 @@ function setup(){
   wave = new p5.Oscillator();
   wave.setType('sine');
   
-  wave.freq(261.6256);
+  wave.freq(440);
   wave.amp(0);
   volume = createSlider(0, 1, vol, 0.01);
   volume.size(300);
@@ -22,8 +22,6 @@ function setup(){
   wave = new p5.Oscillator();
   wave.setType('sine');
   
-  wave.freq(277.1826);
-  wave.amp(0);
   button=createButton('C#');
    button.mousePressed(toggle);
   button=createButton('레');
